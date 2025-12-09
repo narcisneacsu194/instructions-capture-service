@@ -1,0 +1,7 @@
+{
+  "accountNumber": "ACC123456789",
+  "securityId": "abc123",
+  "tradeType": "Buy",
+  "amount": 100000,
+  "timestamp": "2025-08-04T21:15:33Z"
+}

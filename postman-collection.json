@@ -1,0 +1,54 @@
+{
+  "info": {
+    "name": "Instructions Capture Service",
+    "_postman_id": "11111111-2222-3333-4444-555555555555",
+    "description": "Test endpoints for CSV and JSON trade upload",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload JSON Trade",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"accountNumber\": \"ACC123456789\",\n  \"securityId\": \"abc123\",\n  \"tradeType\": \"Buy\",\n  \"amount\": 100000,\n  \"timestamp\": \"2025-08-04T21:15:33Z\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/trade/json",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["trade", "json"]
+        }
+      }
+    },
+    {
+      "name": "Upload CSV Trades",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "sample-trades.csv"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/trade/csv",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["trade", "csv"]
+        }
+      }
+    }
+  ]
+}
